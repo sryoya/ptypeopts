@@ -1,6 +1,7 @@
-package stropt
+package validator
 
 import (
+	"github.com/sryoya/ptypeopts/protobuf/stropt"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/reflect/protoreflect"
 	"google.golang.org/protobuf/types/descriptorpb"
@@ -11,7 +12,7 @@ func GetAvailableChars(pb proto.Message) []string {
 	var res []string
 	m.Range(func(fd protoreflect.FieldDescriptor, v protoreflect.Value) bool {
 		opts := fd.Options().(*descriptorpb.FieldOptions)
-		ext, ok := proto.GetExtension(opts, E_MaxLength).(string)
+		ext, ok := proto.GetExtension(opts, stropt.E_MaxLength).(string)
 		if !ok {
 			return true
 		}
