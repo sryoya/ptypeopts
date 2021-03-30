@@ -1,4 +1,4 @@
-module github.com/sryoya/ptypeopts/ptypeopts-go
+module github.com/sryoya/ptypeopts
 
 go 1.16
 
